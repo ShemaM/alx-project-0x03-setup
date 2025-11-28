@@ -1,11 +1,11 @@
+import { ButtonProps } from '../../interface';
 
-
-const Button = ({ 
+const Button: React.FC<ButtonProps> = ({ 
   children, 
   onClick, 
   variant = 'primary',
   type = 'button'
-}: ButtonProps) => {
+}) => {
   return (
     <button 
       type={type}
