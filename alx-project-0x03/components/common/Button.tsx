@@ -1,13 +1,4 @@
-// Remove the problematic import and use inline types temporarily
-// import { ButtonProps } from '../../interface';
 
-// Define props inline temporarily
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-  variant?: 'primary' | 'secondary';
-  type?: 'button' | 'submit' | 'reset';
-}
 
 const Button = ({ 
   children, 
