@@ -1,27 +1,33 @@
+// Remove the problematic import and use inline types temporarily
+// import { ButtonProps } from '../../interface';
 
+// Define props inline temporarily
 interface ButtonProps {
-  buttonLabel: string
-  buttonSize?: string
-  buttonBackgroundColor?: 'red' | 'blue' | 'orange' | 'green'
-  action?: () => void
+  children: React.ReactNode;
+  onClick?: () => void;
+  variant?: 'primary' | 'secondary';
+  type?: 'button' | 'submit' | 'reset';
 }
 
-
-const Button = ({ buttonLabel, buttonSize, buttonBackgroundColor, action }: ButtonProps) => {
-
-  const backgroundColorClass = buttonBackgroundColor ? {
-    red: 'bg-red-500',
-    blue: 'bg-blue-500',
-    orange: 'bg-orange-500',
-    green: 'bg-green-500',
-  }[buttonBackgroundColor] : 'bg-slate-500'
-
-
+const Button = ({ 
+  children, 
+  onClick, 
+  variant = 'primary',
+  type = 'button'
+}: ButtonProps) => {
   return (
-    <button onClick={action} className={`${backgroundColorClass} ${buttonSize} px-6 py-2 text-sm font-semibold rounded-lg hover:${backgroundColorClass}/50 transition duration-300 text-white`}>
-      {buttonLabel}
+    <button 
+      type={type}
+      onClick={onClick}
+      className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+        variant === 'primary' 
+          ? 'bg-blue-600 text-white hover:bg-blue-700' 
+          : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
+      }`}
+    >
+      {children}
     </button>
-  )
-}
+  );
+};
 
 export default Button;
