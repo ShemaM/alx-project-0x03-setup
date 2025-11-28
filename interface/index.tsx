@@ -1,8 +1,9 @@
+// Import the PageRouteProps interface
+import { PageRouteProps } from '../interface';
 import Layout from '../components/layouts/Layout';
 import Button from '../components/common/Button';
-import { PageRouteProps } from '../interface';
 
-// Use the PageRouteProps interface
+// Use the imported PageRouteProps interface
 const Home: React.FC<PageRouteProps> = () => {
   const handleClick = () => {
     console.log('Button clicked!');

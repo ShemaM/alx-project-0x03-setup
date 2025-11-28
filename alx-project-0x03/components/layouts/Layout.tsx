@@ -1,11 +1,7 @@
-// Remove problematic import
-// import { LayoutProps } from '@/interface';
+// Use relative import that works
+import { LayoutProps } from '../../interface';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-// Use simple components without complex imports
+// Add simple Header and Footer components
 const Header = () => (
   <header className="bg-white shadow-sm border-b">
     <div className="container mx-auto px-4 py-4">
@@ -22,6 +18,7 @@ const Footer = () => (
   </footer>
 );
 
+// Use simpler function syntax
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
